@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f7f4ee">
+  <meta name="description" content="一只陪你背书的轻量 CC 桌宠">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <title>CC 陪你背书</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/cc-192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="icons/cc-192.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">今天</p>
+        <p class="today-stats"><strong id="roundCount">0</strong> 轮 · <strong id="minuteCount">0</strong> 分钟</p>
+      </div>
+      <div class="top-actions">
+        <button class="icon-button install-button" id="installApp" type="button" aria-label="安装到手机" title="安装到手机" hidden>
+          <span aria-hidden="true">⇩</span>
+        </button>
+        <button class="icon-button" id="resetToday" type="button" aria-label="清空今日记录" title="清空今日记录">
+          <span aria-hidden="true">↺</span>
+        </button>
+      </div>
+    </header>
+
+    <section class="pet-stage" aria-label="CC 桌宠区域">
+      <div class="speech-wrap" aria-live="polite">
+        <div class="speech-bubble" id="speechBubble">选个时间，我们慢慢来。</div>
+      </div>
+
+      <button class="pet-button" id="petButton" type="button" aria-label="戳一戳 CC">
+        <span class="pet-shadow" aria-hidden="true"></span>
+        <span class="cc" id="cc" aria-hidden="true">
+          <span class="cc-arm cc-arm-left"></span>
+          <span class="cc-arm cc-arm-right"></span>
+          <span class="cc-body">
+            <span class="cc-eye cc-eye-left"></span>
+            <span class="cc-eye cc-eye-right"></span>
+            <span class="cc-cheek cc-cheek-left"></span>
+            <span class="cc-cheek cc-cheek-right"></span>
+          </span>
+          <span class="cc-leg cc-leg-left"></span>
+          <span class="cc-leg cc-leg-right"></span>
+        </span>
+      </button>
+      <p class="pet-name">CC</p>
+    </section>
+
+    <section class="timer-panel" aria-label="专注计时器">
+      <div class="time-options" id="timeOptions" aria-label="选择专注时长">
+        <button class="time-chip" type="button" data-minutes="10">10</button>
+        <button class="time-chip is-selected" type="button" data-minutes="20">20</button>
+        <button class="time-chip" type="button" data-minutes="30">30</button>
+        <button class="time-chip" type="button" data-minutes="45">45</button>
+      </div>
+
+      <div class="timer-display" id="timerDisplay" aria-label="剩余时间">20:00</div>
+      <div class="progress-track" aria-hidden="true">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+
+      <div class="timer-actions">
+        <button class="secondary-button" id="resetTimer" type="button">重置</button>
+        <button class="primary-button" id="toggleTimer" type="button">开始</button>
+      </div>
+    </section>
+  </main>
+
+  <div class="toast" id="toast" role="status"></div>
+  <script src="app.js"></script>
+</body>
+</html>
